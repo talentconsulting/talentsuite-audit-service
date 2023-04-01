@@ -91,15 +91,25 @@ definitions:
   auditLog:
     type: object
     properties: 
-      pageDetail:
+      pageInfo:
         type: object
         $ref: "#/definitions/pageInfo"
-      user:
-        type: string
-      description:
-        type: string
-        description: "This description contains the detail of the action"
-        example: "Report added to project blah"
+      logs:
+        type: array
+        items:
+          type: object
+          properties: 
+            id:
+              type: string
+            created:
+              type: string
+              format: date-time
+            user:
+              type: string
+            description:
+              type: string
+              description: "This description contains the detail of the action"
+              example: "Report added to project blah"
   pageInfo:
     type: object
     properties: 
@@ -113,11 +123,3 @@ definitions:
         type: boolean
       last:
         type: boolean
-  
-    items: 
-      type: object
-      properties: 
-        name: 
-          type: string
-        healthy:
-          type: boolean
