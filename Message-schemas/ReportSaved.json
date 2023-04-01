@@ -1,0 +1,63 @@
+{
+    "$id": "https://talentsuite.uk/schemas/ReportCreated",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+    "type": "object",
+    "properties": {
+        "id": { "type": "string" },
+        "completedTasks": { 
+            "type": "string" 
+        },
+        "plannedTasks": { 
+            "type": "string" 
+        },
+        "risks": { 
+            "type": "array", 
+            "items" : {
+                "type" : "object",
+                "properties": {
+                    "id": {  "type": "string"  },
+                    "description": { "type": "string" },
+                    "mitigation": { "type": "string" },
+                    "status": { "type": "string" }
+                },
+                "additionalProperties": false
+            } 
+        },
+        "user": { 
+            "type": "object",
+            "properties": {
+                "id": {  "type": "string"  },
+                "firstName": {  "type": "string"  },
+                "surname": {  "type": "string"  }
+            },
+            "additionalProperties": false
+        },
+        "project": {
+            "type" : "object",
+            "properties": {
+                "id": {  "type": "string" },
+                "description": { "type": "string" }
+            },
+            "additionalProperties": false
+        },
+        "sow": {
+            "type" : "object",
+            "properties": {
+                "id": {  "type": "string" },
+                "description": { "type": "string" }
+            },
+            "additionalProperties": false
+        },
+        "client": {
+            "type" : "object",
+            "properties": {
+                "id": {  "type": "string" },
+                "description": { "type": "string" }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": ["user", "project", "client", "sow", "id", "completedTasks", "plannedTasks"],
+    "additionalProperties": false
+}
