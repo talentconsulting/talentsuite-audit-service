@@ -12,7 +12,7 @@
         "plannedTasks": { 
             "type": "string" 
         },
-        "risks": { 
+        "risks": {  
             "type": "array", 
             "items" : {
                 "type" : "object",
