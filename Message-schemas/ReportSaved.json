@@ -5,6 +5,7 @@
     "type": "object",
     "properties": {
         "id": { "type": "string" },
+        "created": { "type": "string", "format": "date-time"},
         "completedTasks": { 
             "type": "string" 
         },
