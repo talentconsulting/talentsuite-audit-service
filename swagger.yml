@@ -1,9 +1,9 @@
 swagger: "2.0"
 info:
-  title: Sample API
-  description: API description in Markdown.
+  title: Orchestration service API
+  description: This service contains all our 'stuff' until we can split the domains
   version: 1.0.0
-host: api.example.com
+host: orchestration.talentsuite.uk
 basePath: /v1
 schemes:
   - https
