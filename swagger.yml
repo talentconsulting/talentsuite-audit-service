@@ -4,7 +4,6 @@ info:
   description: This service contains all our 'stuff' until we can split the domains
   version: 1.0.0
 host: orchestration.talentsuite.uk
-basePath: /v1
 schemes:
   - https
 paths:
@@ -71,7 +70,7 @@ paths:
         200:
           description: OK
           schema:
-            "$ref": "#/definitions/auditLog"
+            "$ref": "#/definitions/auditResponse"
 
 definitions:
   info:
@@ -88,7 +87,7 @@ definitions:
           type: string
         healthy:
           type: boolean
-  auditLog:
+  auditResponse:
     type: object
     properties: 
       pageInfo:
