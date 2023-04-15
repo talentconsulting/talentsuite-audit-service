@@ -25,40 +25,19 @@
                 "additionalProperties": false
             }
         },
-        "user": { 
-            "type": "object",
-            "properties": {
-                "id": {  "type": "string"  },
-                "firstName": {  "type": "string"  },
-                "surname": {  "type": "string"  }
-            },
-            "additionalProperties": false
+        "userId": { 
+            "type": "string"
         },
-        "project": {
-            "type" : "object",
-            "properties": {
-                "id": {  "type": "string" },
-                "description": { "type": "string" }
-            },
-            "additionalProperties": false
+        "projectId": {
+            "type" : "string"
         },
-        "sow": {
-            "type" : "object",
-            "properties": {
-                "id": {  "type": "string" },
-                "description": { "type": "string" }
-            },
-            "additionalProperties": false
+        "sowId": {
+            "type" : "string"
         },
-        "client": {
-            "type" : "object",
-            "properties": {
-                "id": {  "type": "string" },
-                "description": { "type": "string" }
-            },
-            "additionalProperties": false
+        "clientId": {
+            "type" : "string"
         }
     },
-    "required": ["user", "project", "client", "sow", "id", "completedTasks", "plannedTasks"],
+    "required": ["userId", "projectId", "clientId", "sowId", "id", "completedTasks", "plannedTasks"],
     "additionalProperties": false
 }
