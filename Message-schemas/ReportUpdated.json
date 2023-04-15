@@ -1,18 +1,18 @@
 {
-    "$id": "https://talentsuite.uk/schemas/ReportCreated",
+    "$id": "https://talentsuite.uk/schemas/ReportUpdated",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
 
     "type": "object",
     "properties": {
         "id": { "type": "string" },
-        "created": { "type": "string", "format": "date-time"},
+        "submitted": { "type": "string", "format": "date-time"},
         "completedTasks": { 
             "type": "string" 
         },
         "plannedTasks": { 
             "type": "string" 
         },
-        "risks": {  
+        "risks": { 
             "type": "array", 
             "items" : {
                 "type" : "object",
@@ -23,7 +23,7 @@
                     "status": { "type": "string" }
                 },
                 "additionalProperties": false
-            } 
+            }
         },
         "user": { 
             "type": "object",
