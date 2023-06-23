@@ -1,7 +1,9 @@
+# Scenarios
+
+## Adding a report
+
 ```mermaid
 sequenceDiagram
-title: Adding a report
-
     Reporter->UI: LogIn
     UI->Reporter: Response
     UI->ClientsAPI: Fetch project & client data
