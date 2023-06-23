@@ -36,4 +36,4 @@ end
 ```
 </div>
 
-![](Adding a report.svg)
+![](Adding_a_report.svg)
