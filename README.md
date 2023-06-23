@@ -1,15 +1,27 @@
 ```mermaid
-journey
-	title Me studying for exams
-	section Exam is announced
-		I start studying: 1: Me
-		Make notes: 2: Me
-		Ask friend for help: 3: Me, Friend
-		We study togther: 5: Me, Friend
-	section Exam Day
-		Syllabys is incomplete: 2: Me
-		Give exam: 1: Me, Friend
-	section Result Declared
-		I passed the exam with destinction!: 5: Me
-		Friend barely gets passing marks: 2: Friend
+sequencediagram
+
+Reporter->UI: LogIn
+UI->Reporter: Response
+UI->ClientsAPI: Fetch project & client data
+ClientsAPI->UI:
+Reporter->UI: CreateReport()
+UI->ReportAPI: FetchData()
+ReportAPI->UI: Response Data
+UI->Reporter: Form Data
+Reporter->UI: SubmitForm()
+UI->ReportAPI: PostData()
+ReportAPI->ReportAPI: StoreReport
+ReportAPI->MessagingPlatform: RaiseReportAddedEvent
+ReportAPI->UI:
+UI->Reporter:
+MessagingPlatform->NotificationService: ReceivedReportAddedEvent()
+NotificationService->NotificationService: ApplyNotificationRules
+alt RAGStatusRed
+  NotificationService->UserService: WhoWantsThisReport()
+  UserService->NotificationService:
+  NotificationService->NotificationService: GenerateEmailContent()
+  NotificationService->EmailService: SendAnEmail()
+  EmailService->NotificationService:
+end
 ```
