@@ -4,7 +4,7 @@
 
 ```mermaid
 sequenceDiagram
-    Reporter->UI: LogIn
+    Reporter->>UI: LogIn
     UI->Reporter: Response
     UI->ClientsAPI: Fetch project & client data
     ClientsAPI->UI: 
