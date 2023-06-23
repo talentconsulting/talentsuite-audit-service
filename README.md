@@ -31,7 +31,7 @@ alt RAGStatusRed
   NotificationService->EmailService: SendAnEmail()
   EmailService->NotificationService:
 end
-		
+
 @enduml
 ```
 </div>
