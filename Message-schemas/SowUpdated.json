@@ -1,0 +1,35 @@
+{
+    "$id": "https://talentsuite.uk/schemas/SowUpdated",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+    "type": "object",
+    "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time"},
+        "name": { 
+            "type": "string" 
+        },
+        "reference": { 
+            "type": "string" 
+        },
+        "startDate": { 
+            "type": "string",
+            "format": "date"
+        },
+        "endDate": { 
+            "type": "string",
+            "format": "date"
+        },
+        "contractNumber": { 
+            "type": "string" 
+        },
+        "userId": { 
+            "type": "string"            
+        },
+        "clientId": {
+            "type" : "string"
+        }
+    },
+    "required": ["userId", "id", "name", "clientId", "endDate", "startDate", "reference", "timestamp"],
+    "additionalProperties": false
+}
