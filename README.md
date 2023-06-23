@@ -2,7 +2,9 @@
 
 ## Adding a report
 
+
 ```mermaid
+
 sequenceDiagram
     Reporter->>UI: LogIn
     UI->>Reporter: Response
@@ -18,13 +20,15 @@ sequenceDiagram
     ReportAPI->>MessagingPlatform: RaiseReportAddedEvent
     ReportAPI->>UI: 
     UI->>Reporter: 
-    MessagingPlatform->>NotificationService: ReceivedReportAddedEvent()
-    NotificationService->>NotificationService: ApplyNotificationRules
+        MessagingPlatform->>OrchestrationService: ReceivedReportAddedEvent()
     alt RAGStatusRed
-    NotificationService->>UserService: WhoWantsThisReport()
-    UserService->>NotificationService: 
-    NotificationService->>NotificationService: GenerateEmailContent()
+    OrchestrationService->>UserService: WhoWantsThisReport()
+    UserService->>OrchestrationService: 
+    OrchestrationService->>MessagingPlatform: SendNotification()    
+    MessagingPlatform->>NotificationService: ReceivedSendNotification
     NotificationService->>EmailService: SendAnEmail()
-    EmailService->>NotificationService: 
-    end
+
+    end    
+
+    
 ```
