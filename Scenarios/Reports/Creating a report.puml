@@ -1,3 +1,4 @@
+@startuml Report Creation
 Reporter->>UI: LogIn
 UI->>Reporter: Response
 UI->>ClientsAPI: Fetch project & client data
