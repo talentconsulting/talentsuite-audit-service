@@ -1,9 +1,9 @@
 swagger: "2.0"
 info:
-  title: Orchestration service API
-  description: This service contains all our 'stuff' until we can split the domains
+  title: Audit service API
+  description: This service stores all the audit messages from the system
   version: 1.0.0
-host: orchestration.talentsuite.uk
+host: audit.talentsuite.uk
 schemes:
   - https
 paths:
